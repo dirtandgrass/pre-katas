@@ -1,4 +1,4 @@
-const isPalindrome = function (str) {
+const isPalindrome = function(str) {
   return str.split('').reverse().join('') === str;
 };
 
