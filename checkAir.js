@@ -1,15 +1,8 @@
 const checkAir = (samples, threshold) => {
-  let count = 0;
-  for (let sample of samples) {
-    if (sample === "dirty") {
-      count++;
-    }
-  }
-  const percDirty = count / samples.length;
-
+  let count = samples.filter(sample => sample === "dirty").length; // count the number of dirty samples
+  const percDirty = count / samples.length; // get percentage of dirty samples
   return percDirty > threshold ? "Polluted" : "Clean";
-}
-
+};
 
 
 console.log(checkAir(
@@ -25,4 +18,4 @@ console.log(checkAir(
 console.log(checkAir(
   ['clean', 'dirty', 'clean', 'dirty', 'clean', 'dirty', 'clean'],
   0.9
-))
+));
