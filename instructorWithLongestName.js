@@ -1,15 +1,17 @@
-const instructorWithLongestName = function (instructors) {
+const instructorWithLongestName = function(instructors) {
 
-  let longest = -1
-  let result = null
-  for (let inst of instructors) {
-    if (inst.name.length > longest) { // don't replace if ==
-      longest = inst.name.length
-      result = inst
-    }
+  if (!Array.isArray(instructors) || instructors.length === 0) {
+    throw new Error("Invalid input");
   }
 
-  return result
+  const longestName = instructors.reduce((acc, curr) => {
+    if (curr.name.length > acc.name.length) { // if the current name is longer than the accumulator's name
+      return curr; // replace the accumulator with the current object
+    }
+    return acc;
+  });
+
+  return longestName;
 };
 
 console.log(
