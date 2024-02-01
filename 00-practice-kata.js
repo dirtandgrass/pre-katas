@@ -1,17 +1,17 @@
 /**
- * Add four (4) numbers.
+ * Add all numbers from the input array
  */
-const addFourNumbers = function() {
-  let sum = 0;
-  for (const summand of arguments) {
-    if (typeof summand === 'number') {
-      sum += summand;
+const sumNumbersFromArray = function() {
+  return [...arguments].reduce((acc, curr) => {
+    if (typeof curr === 'number') {
+      acc += curr;
     }
-  }
-  return sum;
+    return acc;
+  }, 0);
+
 };
 
-console.log(addFourNumbers(1, 1, 1, 1)); // Expected: 4
-console.log(addFourNumbers(0, 0, 0, 0)); // Expected: 0
-console.log(addFourNumbers(1, 2, 3, 4)); // Expected: 10
-console.log(addFourNumbers(100, -12, 36, -99)); // Expected: 25
+console.log(sumNumbersFromArray(1, 1, 1, 1)); // Expected: 4
+console.log(sumNumbersFromArray(0, 0, 0, 0)); // Expected: 0
+console.log(sumNumbersFromArray(1, 2, 3, 4)); // Expected: 10
+console.log(sumNumbersFromArray(100, -12, 36, -99)); // Expected: 25
