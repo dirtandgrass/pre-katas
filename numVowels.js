@@ -1,10 +1,10 @@
-const numberOfVowels = function (data) {
+const countVowels = function(data) {
   if (typeof data !== 'string') {
-    return 0;
+    throw new Error("Invalid input");
   }
-  return data.match(/[aeiou]/gi).length
+  return data.match(/[aeiou]/gi).length; // find matches vowels, case insensitive, get count
 };
 
-console.log(numberOfVowels("orange"));
-console.log(numberOfVowels("lighthouse labs"));
-console.log(numberOfVowels("aeiou"));
+console.log(countVowels("orange"));
+console.log(countVowels("lighthouse labs"));
+console.log(countVowels("aeiou"));
