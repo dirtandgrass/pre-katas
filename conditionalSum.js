@@ -1,7 +1,7 @@
-const conditionalSum = function (values, condition) {
+const conditionalSum = function(values, condition) {
 
-  if (typeof values !== 'object' || values.length === 0) {
-    return 0;
+  if (!Array.isArray(values) || values.length === 0) {
+    throw new Error("Invalid input");
   }
 
   const sum = values.reduce((acc, curr) => {
@@ -11,7 +11,7 @@ const conditionalSum = function (values, condition) {
       return curr % 2 !== 0 ? acc + curr : acc;
     }
     return 0;
-  }, 0)
+  });
   return sum;
 };
 
