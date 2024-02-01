@@ -1,9 +1,9 @@
-const urlEncode = function (text) {
+const urlEncode = function(text) {
   // can't use replace, must have loop...
   let encoded = text.split("");
   for (let i = 0; i < encoded.length; i++) {
     if (encoded[i] === ' ') {
-      encoded[i] = '%20'
+      encoded[i] = '%20';
     }
   }
 
