@@ -1,9 +1,10 @@
-const findMissingNumber = function (arr) {
-  if (arr.length <= 1) {
-    return 0;
+const findMissingNumber = function(arr) {
+  if (!Array.isArray(arr) || arr.length <= 1) {
+    throw new Error("Invalid input");
   }
+
   for (let i = 1; i < arr.length; i++) {
-    if (arr[i - 1] != arr[i] - 1) {
+    if (arr[i - 1] !== arr[i] - 1) {
       return arr[i - 1] + 1;
     }
   }
